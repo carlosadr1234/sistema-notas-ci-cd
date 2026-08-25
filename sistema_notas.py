@@ -2,9 +2,6 @@ def calcular_media(notas):
     if not notas:
         raise ValueError("A lista de notas não pode estar vazia.")
 
-    if any(nota < 0 or nota > 10 for nota in notas):
-        raise ValueError("As notas devem estar entre 0 e 10.")
-
     return sum(notas) / len(notas)
 
 
@@ -17,24 +14,14 @@ def verificar_situacao(media):
         return "Reprovado"
 
 
-def maior_nota(notas):
-    if not notas:
-        raise ValueError("A lista de notas não pode estar vazia.")
-
-    return max(notas)
-
-
-def menor_nota(notas):
-    if not notas:
-        raise ValueError("A lista de notas não pode estar vazia.")
-
-    return min(notas)
-
-
-def resumo_aluno(nome, notas):
+def calcular_resultado(notas):
     media = calcular_media(notas)
+    situacao = verificar_situacao(media)
 
     return {
+        "media": media,
+        "situacao": situacao
+    }    return {
         "nome": nome,
         "media": round(media, 2),
         "situacao": verificar_situacao(media),
