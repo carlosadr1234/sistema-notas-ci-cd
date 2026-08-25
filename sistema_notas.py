@@ -21,20 +21,7 @@ def calcular_resultado(notas):
     return {
         "media": media,
         "situacao": situacao
-    }    return {
-        "nome": nome,
-        "media": round(media, 2),
-        "situacao": verificar_situacao(media),
-        "maior_nota": maior_nota(notas),
-        "menor_nota": menor_nota(notas),
-    }
-
-
-if __name__ == "__main__":
-    nome = input("Nome do aluno: ")
-
-    notas = [
-        float(input("Digite a primeira nota: ")),
+    }        float(input("Digite a primeira nota: ")),
         float(input("Digite a segunda nota: ")),
         float(input("Digite a terceira nota: "))
     ]
